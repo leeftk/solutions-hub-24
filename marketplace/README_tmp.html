@@ -366,45 +366,54 @@ code {
 </head>
 
 <body>
-    <h2 id="key-design-decisions-in-otcswap-contract">Key Design Decisions in OTCSwap Contract:</h2>
+    <h1 id="demarket">DeMarket</h1>
+<p><strong>Author:</strong><br>
+Lee Faria/33Audits</p>
+<h2 id="demarket">DeMarket</h2>
+<p>Contract allows users to list, purchase, and withdraw funds from a decentralized marketplace.</p>
+<h3 id="design-choices">Design choices</h3>
+<p>Key Design Decisions in DeMarket Contract:</p>
 <ol>
 <li>
-<p>Atomic Execution:</p>
+<p>Decentralized User Management:</p>
 <ul>
-<li>Executes both token transfers in a single transaction</li>
-<li>Ensures swap integrity - both transfers succeed or both fail</li>
+<li>Users register with unique usernames</li>
+<li>Utilizes a mapping for efficient user data storage and retrieval</li>
+<li>Implements a User struct to store username, existence status, and purchase history</li>
 </ul>
 </li>
 <li>
-<p>Flexible Token Pairing:</p>
+<p>Flexible Item Listing:</p>
 <ul>
-<li>Allows swaps between any two ERC20 tokens</li>
-<li>Enhances versatility by not restricting to specific token pairs</li>
+<li>Anyone can list items for sale once registered</li>
+<li>Uses an Item struct to store comprehensive item details</li>
+<li>Employs a mapping with auto-incrementing itemId for easy item management</li>
 </ul>
 </li>
 <li>
-<p>No Direct Ether Handling:</p>
+<p>Direct Ether Handling:</p>
 <ul>
-<li>Focuses solely on ERC20 token swaps</li>
-<li>Avoids complexities associated with direct Ether transfers</li>
+<li>Accepts Ether payments for item purchases</li>
+<li>Implements a balance system to hold seller funds until withdrawal</li>
+<li>Includes a withdrawal function for sellers to claim their earnings</li>
 </ul>
 </li>
 <li>
-<p>Permissionless Design:</p>
+<p>Purchase History Tracking:</p>
 <ul>
-<li>Anyone can create a swap, promoting open usage</li>
-<li>Counterparty specified at creation for targeted swaps</li>
+<li>Maintains an array of purchased item IDs for each user</li>
+<li>Allows retrieval of a user's complete purchase history</li>
 </ul>
 </li>
 <li>
-<p>Time-Bound Swaps:</p>
+<p>Time-Independent Transactions:</p>
 <ul>
-<li>Implements expiration time for swaps</li>
-<li>Prevents long-term open swaps, mitigating risks from market changes</li>
+<li>No time restrictions on listings or purchases</li>
+<li>Items remain available until sold, allowing for long-term listings</li>
 </ul>
 </li>
 </ol>
-<p>These design choices create a secure, atomic OTC swap mechanism for ERC20 tokens. The atomic execution ensures that only the specified receiver can execute the swap. Using safeTransfer instead of transfer will account for tokens that don't have a return value or return false on failure instead of reverting such as USDT. The check and effects interaction pattern mitigates against potential reentrancy issues if using tokens with callback functions. Overall the contract is simple, straightforward, gas efficient and secure.</p>
+<p>These design choices create a flexible decentralized marketplace. The user management allows for permissionless participation, while item listing system allows anyone to list an item as long as its not already available. Direct Ether handling simplifies transactions, and the purchase history feature logs user's purchase history.</p>
 
 </body>
 

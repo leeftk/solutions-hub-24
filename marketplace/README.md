@@ -33,5 +33,5 @@ Key Design Decisions in DeMarket Contract:
    - No time restrictions on listings or purchases
    - Items remain available until sold, allowing for long-term listings
 
-These design choices create a flexible decentralized marketplace. The user management allows for permissionsless participation, while item listing system allows anyone to list an item as long as its not already available. Direct Ether handling simplifies transactions, and the purchase history feature logs user's purchase history. The time-independent nature of transactions allows for a more open and persistent marketplace.
+These design choices create a flexible decentralized marketplace. The user management allows for permissionless participation, while item listing system allows anyone to list an item as long as its not already available. Direct Ether handling simplifies transactions, and the purchase history feature logs user's purchase history.
 
