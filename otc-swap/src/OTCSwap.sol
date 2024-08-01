@@ -24,15 +24,6 @@ contract OTCSwap {
                                STRUCTS
     //////////////////////////////////////////////////////////////*/
 
-    /// @dev Represents a swap agreement between two parties.
-    /// @param initiator The address of the user initiating the swap.
-    /// @param counterparty The address of the counterparty who can execute the swap.
-    /// @param tokenXAddress The address of the token that the initiator offers.
-    /// @param tokenYAddress The address of the token that the counterparty offers.
-    /// @param amountX The amount of token X to be swapped.
-    /// @param amountY The amount of token Y to be swapped.
-    /// @param expirationTime The time until which the swap is valid.
-    /// @param executed A boolean indicating whether the swap has been executed.
     struct Swap {
         address initiator;
         address counterparty;
