@@ -1,6 +1,6 @@
-Please check the Readme in the directory for design explanations and the Contract Overview for details descriptions of the contract functions.
+Please check the Readme in the each directory for design explanations and the a file called Contract Overview that includes detailed descriptions of the individual contracts and their methods.
 
-Each directory has a separate solutions with its own testing file and Readme. The tests have descriptions and the functions are Natspec'd.
+Each directory has a its own solution to respective exercise given with its own testing file and Readme. The tests have descriptions and the functions are Natspec'd.
 
 `cd marketplace`
 
